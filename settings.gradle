@@ -3,6 +3,6 @@ include 'common'
 include 'services'
 include 'services:system'
 findProject(':services:system')?.name = 'system'
-include 'Gateway'
+include 'gateway'
 include 'api'
 
