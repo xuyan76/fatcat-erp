@@ -7,3 +7,5 @@
  */
 
 rootProject.name = 'fatcat-erp'
+include 'common'
+
