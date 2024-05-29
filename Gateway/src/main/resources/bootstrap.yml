@@ -1,0 +1,25 @@
+server:
+  management:
+    port: 8322
+
+spring:
+  application:
+    name: erp-gateway
+
+  profiles:
+    active: dev
+
+  main:
+    web-application-type: reactive
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      config:
+        enabled: true
+        format: FILES
+        profile-separator: "-"
+      discovery:
+        instance-id: ${spring.application.name}
+        serviceName: ${spring.application.name}
