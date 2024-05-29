@@ -1,4 +1,5 @@
 server:
+  port: 8622
   management:
     port: 8324
 
