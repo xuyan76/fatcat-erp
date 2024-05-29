@@ -18,8 +18,7 @@ spring:
         format: FILES
         profile-separator: "-"
       discovery:
-        enabled: true
-        register: true
-        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+        instance-id: ${spring.application.name}:${spring.application.instance_id
+        serviceName: ${spring.application.name}
 
 
