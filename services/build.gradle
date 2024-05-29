@@ -17,7 +17,12 @@ subprojects {
         runtimeOnly 'com.mysql:mysql-connector-j'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
         testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-        implementation 'org.springframework.boot:spring-boot-starter-web'
+        // 容器改成jetty
+        implementation('org.springframework.boot:spring-boot-starter-web') {
+            exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+        }
+        implementation 'org.springframework.boot:spring-boot-starter-jetty'
+
         compileOnly 'org.projectlombok:lombok'
         annotationProcessor 'org.projectlombok:lombok'
     }
