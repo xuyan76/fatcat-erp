@@ -16,8 +16,9 @@ buildscript {
 group = 'com.fatcat.erp'
 version = '1.0.0'
 
-subprojects {
+allprojects {
     apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
 
     repositories {
         maven {
@@ -30,4 +31,10 @@ subprojects {
         mavenCentral()
     }
 
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
 }
+

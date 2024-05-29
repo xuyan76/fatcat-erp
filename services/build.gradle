@@ -1,0 +1,10 @@
+apply {
+    plugin 'org.springframework.boot'
+    plugin 'io.spring.dependency-management'
+    plugin 'java'
+}
+
+dependencies {
+    implementation project(":common")
+    implementation 'org.springframework.cloud:spring-cloud-starter'
+}
