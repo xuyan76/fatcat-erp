@@ -1,15 +1,23 @@
-apply {
-    plugin 'org.springframework.boot'
-    plugin 'io.spring.dependency-management'
-    plugin 'java'
-}
+subprojects {
+    apply {
+        plugin 'org.springframework.boot'
+        plugin 'io.spring.dependency-management'
+        plugin 'java'
+    }
 
-dependencies {
-    implementation project(":common")
-    implementation 'org.springframework.cloud:spring-cloud-starter'
-    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    runtimeOnly 'com.mysql:mysql-connector-j'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    dependencies {
+        implementation project(":common")
+        implementation 'org.springframework.boot:spring-boot-starter'
+        implementation 'org.springframework.cloud:spring-cloud-starter'
+        implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
+        implementation 'org.springframework.cloud:spring-cloud-starter-consul-config'
+        implementation 'org.springframework.cloud:spring-cloud-starter-consul-discovery'
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+        runtimeOnly 'com.mysql:mysql-connector-j'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+    }
 }

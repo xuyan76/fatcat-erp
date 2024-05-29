@@ -1,0 +1,25 @@
+server:
+  management:
+    port: 8324
+
+spring:
+  application:
+    name: erp-service-system
+
+  profiles:
+    active: dev
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      config:
+        enabled: true
+        format: FILES
+        profile-separator: "-"
+      discovery:
+        enabled: true
+        register: true
+        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+
